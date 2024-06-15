@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище TabacoModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Bonus_Card">
+    <Key>
+      <PropertyRef Name="ID_Bonus_Card" />
+    </Key>
+    <Property Name="ID_Bonus_Card" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_Bonus_Card" Type="varchar(max)" Nullable="false" />
+    <Property Name="Is_Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Brand">
+    <Key>
+      <PropertyRef Name="ID_Brand" />
+    </Key>
+    <Property Name="ID_Brand" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_Brand" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Is_Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contract">
+    <Key>
+      <PropertyRef Name="ID_Contract" />
+    </Key>
+    <Property Name="ID_Contract" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Number_Contract" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Date_Time_Contract" Type="datetime" Nullable="false" />
+    <Property Name="Summ" Type="int" Nullable="false" />
+    <Property Name="Is_Deleted" Type="bit" Nullable="false" />
+    <Property Name="User_ID" Type="int" Nullable="false" />
+    <Property Name="Supplier_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Defect">
+    <Key>
+      <PropertyRef Name="ID_Defect" />
+    </Key>
+    <Property Name="ID_Defect" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_Product" Type="varchar" MaxLength="50" />
+    <Property Name="Quality_D" Type="int" Nullable="false" />
+    <Property Name="Is_Deleted" Type="bit" Nullable="false" />
+    <Property Name="Purchased_Products_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="ID_Order" />
+    </Key>
+    <Property Name="ID_Order" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date_Time_Order" Type="datetime" Nullable="false" />
+    <Property Name="Number_Order" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Is_Deleted" Type="bit" Nullable="false" />
+    <Property Name="User_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ID_Product" />
+    </Key>
+    <Property Name="ID_Product" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_Product" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Cost_Product" Type="int" Nullable="false" />
+    <Property Name="Strength" Type="int" Nullable="false" />
+    <Property Name="Is_Deleted" Type="bit" Nullable="false" />
+    <Property Name="Type_ID" Type="int" Nullable="false" />
+    <Property Name="Brand_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product_History">
+    <Key>
+      <PropertyRef Name="ID_Product_History" />
+    </Key>
+    <Property Name="ID_Product_History" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Product_Info" Type="varchar(max)" />
+    <Property Name="Create_Record" Type="datetime" />
+    <Property Name="Change_Record" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Products_Suppliers">
+    <Key>
+      <PropertyRef Name="ID_Products_Suppliers" />
+    </Key>
+    <Property Name="ID_Products_Suppliers" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Cost" Type="int" Nullable="false" />
+    <Property Name="Quality_P_S" Type="int" Nullable="false" />
+    <Property Name="Is_Deleted" Type="bit" Nullable="false" />
+    <Property Name="Type_ID" Type="int" Nullable="false" />
+    <Property Name="Brand_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Purchased_Products">
+    <Key>
+      <PropertyRef Name="ID_Purchased_Products" />
+    </Key>
+    <Property Name="ID_Purchased_Products" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Quality" Type="int" Nullable="false" />
+    <Property Name="Is_Deleted" Type="bit" Nullable="false" />
+    <Property Name="Product_ID" Type="int" Nullable="false" />
+    <Property Name="Order_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="ID_Role" />
+    </Key>
+    <Property Name="ID_Role" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_Role" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Is_Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Shop">
+    <Key>
+      <PropertyRef Name="ID_Shop" />
+    </Key>
+    <Property Name="ID_Shop" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_Shop" Type="varchar(max)" Nullable="false" />
+    <Property Name="Adress_Shop" Type="varchar(max)" Nullable="false" />
+    <Property Name="Is_Deleted" Type="bit" Nullable="false" />
+    <Property Name="Warehouse_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="ID_Supplier" />
+    </Key>
+    <Property Name="ID_Supplier" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_Supplier" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Adress_Supplier" Type="varchar(max)" Nullable="false" />
+    <Property Name="Is_Deleted" Type="bit" Nullable="false" />
+    <Property Name="Products_Suppliers_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Tokens">
+    <Key>
+      <PropertyRef Name="token_id" />
+    </Key>
+    <Property Name="token_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="token" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="token_datetime" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Type">
+    <Key>
+      <PropertyRef Name="ID_Type" />
+    </Key>
+    <Property Name="ID_Type" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_Type" Type="varchar(max)" Nullable="false" />
+    <Property Name="Is_Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID_User" />
+    </Key>
+    <Property Name="ID_User" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="First_Name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Middle_Name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Last_Name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Phone_User" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Email_User" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Password_User" Type="varchar(max)" Nullable="false" />
+    <Property Name="Gender" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Salt" Type="varchar" MaxLength="256" />
+    <Property Name="Is_Deleted" Type="bit" Nullable="false" />
+    <Property Name="Role_ID" Type="int" Nullable="false" />
+    <Property Name="Bonus_Card_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User_History">
+    <Key>
+      <PropertyRef Name="ID_User_History" />
+    </Key>
+    <Property Name="ID_User_History" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="User_Info" Type="varchar(max)" />
+    <Property Name="Create_Record" Type="datetime" />
+    <Property Name="Change_Record" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Warehouse">
+    <Key>
+      <PropertyRef Name="ID_Warehouse" />
+    </Key>
+    <Property Name="ID_Warehouse" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Quality" Type="int" />
+    <Property Name="Adress_Warehouse" Type="varchar(max)" />
+    <Property Name="Number_Warehouse" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Is_Deleted" Type="bit" Nullable="false" />
+    <Property Name="Product_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Contract__Suppli__00200768">
+    <End Role="Supplier" Type="Self.Supplier" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="ID_Supplier" />
+      </Principal>
+      <Dependent Role="Contract">
+        <PropertyRef Name="Supplier_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Contract__User_I__7F2BE32F">
+    <End Role="User" Type="Self.User" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID_User" />
+      </Principal>
+      <Dependent Role="Contract">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Defect__Purchase__6477ECF3">
+    <End Role="Purchased_Products" Type="Self.Purchased_Products" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Defect" Type="Self.Defect" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Purchased_Products">
+        <PropertyRef Name="ID_Purchased_Products" />
+      </Principal>
+      <Dependent Role="Defect">
+        <PropertyRef Name="Purchased_Products_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Order__User_ID__534D60F1">
+    <End Role="User" Type="Self.User" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID_User" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product__Brand_I__59FA5E80">
+    <End Role="Brand" Type="Self.Brand" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brand">
+        <PropertyRef Name="ID_Brand" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="Brand_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product__Type_ID__59063A47">
+    <End Role="Type" Type="Self.Type" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Type">
+        <PropertyRef Name="ID_Type" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Products___Brand__74AE54BC">
+    <End Role="Brand" Type="Self.Brand" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Products_Suppliers" Type="Self.Products_Suppliers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brand">
+        <PropertyRef Name="ID_Brand" />
+      </Principal>
+      <Dependent Role="Products_Suppliers">
+        <PropertyRef Name="Brand_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Products___Type___73BA3083">
+    <End Role="Type" Type="Self.Type" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Products_Suppliers" Type="Self.Products_Suppliers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Type">
+        <PropertyRef Name="ID_Type" />
+      </Principal>
+      <Dependent Role="Products_Suppliers">
+        <PropertyRef Name="Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Purchased__Order__5FB337D6">
+    <End Role="Order" Type="Self.Order" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Purchased_Products" Type="Self.Purchased_Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="ID_Order" />
+      </Principal>
+      <Dependent Role="Purchased_Products">
+        <PropertyRef Name="Order_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Purchased__Produ__5EBF139D">
+    <End Role="Product" Type="Self.Product" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Purchased_Products" Type="Self.Purchased_Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ID_Product" />
+      </Principal>
+      <Dependent Role="Purchased_Products">
+        <PropertyRef Name="Product_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Shop__Warehouse___6E01572D">
+    <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Shop" Type="Self.Shop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Warehouse">
+        <PropertyRef Name="ID_Warehouse" />
+      </Principal>
+      <Dependent Role="Shop">
+        <PropertyRef Name="Warehouse_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Supplier__Produc__787EE5A0">
+    <End Role="Products_Suppliers" Type="Self.Products_Suppliers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Supplier" Type="Self.Supplier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products_Suppliers">
+        <PropertyRef Name="ID_Products_Suppliers" />
+      </Principal>
+      <Dependent Role="Supplier">
+        <PropertyRef Name="Products_Suppliers_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User__Bonus_Card__4D94879B">
+    <End Role="Bonus_Card" Type="Self.Bonus_Card" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bonus_Card">
+        <PropertyRef Name="ID_Bonus_Card" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="Bonus_Card_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User__Role_ID__4CA06362">
+    <End Role="Role" Type="Self.Role" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="ID_Role" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="Role_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Warehouse__Produ__6A30C649">
+    <End Role="Product" Type="Self.Product" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ID_Product" />
+      </Principal>
+      <Dependent Role="Warehouse">
+        <PropertyRef Name="Product_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище TabacoModelContainer">
+    <EntitySet Name="Bonus_Card" EntityType="Self.Bonus_Card" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Brand" EntityType="Self.Brand" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contract" EntityType="Self.Contract" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Defect" EntityType="Self.Defect" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product_History" EntityType="Self.Product_History" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products_Suppliers" EntityType="Self.Products_Suppliers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Purchased_Products" EntityType="Self.Purchased_Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Shop" EntityType="Self.Shop" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tokens" EntityType="Self.Tokens" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Type" EntityType="Self.Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_History" EntityType="Self.User_History" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Warehouse" EntityType="Self.Warehouse" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Contract__Suppli__00200768" Association="Self.FK__Contract__Suppli__00200768">
+      <End Role="Supplier" EntitySet="Supplier" />
+      <End Role="Contract" EntitySet="Contract" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Contract__User_I__7F2BE32F" Association="Self.FK__Contract__User_I__7F2BE32F">
+      <End Role="User" EntitySet="User" />
+      <End Role="Contract" EntitySet="Contract" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Defect__Purchase__6477ECF3" Association="Self.FK__Defect__Purchase__6477ECF3">
+      <End Role="Purchased_Products" EntitySet="Purchased_Products" />
+      <End Role="Defect" EntitySet="Defect" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Order__User_ID__534D60F1" Association="Self.FK__Order__User_ID__534D60F1">
+      <End Role="User" EntitySet="User" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product__Brand_I__59FA5E80" Association="Self.FK__Product__Brand_I__59FA5E80">
+      <End Role="Brand" EntitySet="Brand" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product__Type_ID__59063A47" Association="Self.FK__Product__Type_ID__59063A47">
+      <End Role="Type" EntitySet="Type" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Products___Brand__74AE54BC" Association="Self.FK__Products___Brand__74AE54BC">
+      <End Role="Brand" EntitySet="Brand" />
+      <End Role="Products_Suppliers" EntitySet="Products_Suppliers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Products___Type___73BA3083" Association="Self.FK__Products___Type___73BA3083">
+      <End Role="Type" EntitySet="Type" />
+      <End Role="Products_Suppliers" EntitySet="Products_Suppliers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Purchased__Order__5FB337D6" Association="Self.FK__Purchased__Order__5FB337D6">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="Purchased_Products" EntitySet="Purchased_Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Purchased__Produ__5EBF139D" Association="Self.FK__Purchased__Produ__5EBF139D">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Purchased_Products" EntitySet="Purchased_Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Shop__Warehouse___6E01572D" Association="Self.FK__Shop__Warehouse___6E01572D">
+      <End Role="Warehouse" EntitySet="Warehouse" />
+      <End Role="Shop" EntitySet="Shop" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Supplier__Produc__787EE5A0" Association="Self.FK__Supplier__Produc__787EE5A0">
+      <End Role="Products_Suppliers" EntitySet="Products_Suppliers" />
+      <End Role="Supplier" EntitySet="Supplier" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User__Bonus_Card__4D94879B" Association="Self.FK__User__Bonus_Card__4D94879B">
+      <End Role="Bonus_Card" EntitySet="Bonus_Card" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User__Role_ID__4CA06362" Association="Self.FK__User__Role_ID__4CA06362">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Warehouse__Produ__6A30C649" Association="Self.FK__Warehouse__Produ__6A30C649">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Warehouse" EntitySet="Warehouse" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

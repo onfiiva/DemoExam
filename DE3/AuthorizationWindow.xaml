@@ -1,0 +1,38 @@
+﻿<Window x:Class="DE3.AuthorizationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DE3"
+        mc:Ignorable="d"
+        Title="AuthorizationWindow" Height="450" Width="400"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Авторизация" Grid.Column="1" Grid.Row="2" FontSize="20" VerticalAlignment="Center" TextAlignment="Center"/>
+        <TextBlock Text="Логин" Grid.Column="1" Grid.Row="3" FontSize="16" VerticalAlignment="Bottom" TextAlignment="Center"/>
+        <TextBox x:Name="authLogin" Grid.Column="1" Grid.Row="4" FontSize="16" VerticalAlignment="Center" TextAlignment="Center"/>
+        <TextBlock Text="Пароль" Grid.Column="1" Grid.Row="5" FontSize="16" VerticalAlignment="Bottom" TextAlignment="Center"/>
+        <PasswordBox x:Name="authPassword" Grid.Column="1" Grid.Row="6" FontSize="16" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+
+        <Button x:Name="authSubmit" Content="Войти" Grid.Column="1" Grid.Row="7" Click="authSubmit_Click"/>
+        <Button x:Name="toRegWindow" Content="Зарегистрироваться" Grid.Column="1" Grid.Row="8" Click="toRegWindow_Click"/>
+    </Grid>
+</Window>

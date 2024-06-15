@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище TabacoModelContainer" CdmEntityContainer="TabacoEntities">
+    <EntitySetMapping Name="Bonus_Card">
+      <EntityTypeMapping TypeName="TabacoModel.Bonus_Card">
+        <MappingFragment StoreEntitySet="Bonus_Card">
+          <ScalarProperty Name="ID_Bonus_Card" ColumnName="ID_Bonus_Card" />
+          <ScalarProperty Name="Name_Bonus_Card" ColumnName="Name_Bonus_Card" />
+          <ScalarProperty Name="Is_Deleted" ColumnName="Is_Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Brand">
+      <EntityTypeMapping TypeName="TabacoModel.Brand">
+        <MappingFragment StoreEntitySet="Brand">
+          <ScalarProperty Name="ID_Brand" ColumnName="ID_Brand" />
+          <ScalarProperty Name="Name_Brand" ColumnName="Name_Brand" />
+          <ScalarProperty Name="Is_Deleted" ColumnName="Is_Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contract">
+      <EntityTypeMapping TypeName="TabacoModel.Contract">
+        <MappingFragment StoreEntitySet="Contract">
+          <ScalarProperty Name="ID_Contract" ColumnName="ID_Contract" />
+          <ScalarProperty Name="Number_Contract" ColumnName="Number_Contract" />
+          <ScalarProperty Name="Date_Time_Contract" ColumnName="Date_Time_Contract" />
+          <ScalarProperty Name="Summ" ColumnName="Summ" />
+          <ScalarProperty Name="Is_Deleted" ColumnName="Is_Deleted" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Supplier_ID" ColumnName="Supplier_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Defect">
+      <EntityTypeMapping TypeName="TabacoModel.Defect">
+        <MappingFragment StoreEntitySet="Defect">
+          <ScalarProperty Name="ID_Defect" ColumnName="ID_Defect" />
+          <ScalarProperty Name="Name_Product" ColumnName="Name_Product" />
+          <ScalarProperty Name="Quality_D" ColumnName="Quality_D" />
+          <ScalarProperty Name="Is_Deleted" ColumnName="Is_Deleted" />
+          <ScalarProperty Name="Purchased_Products_ID" ColumnName="Purchased_Products_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order">
+      <EntityTypeMapping TypeName="TabacoModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="ID_Order" ColumnName="ID_Order" />
+          <ScalarProperty Name="Date_Time_Order" ColumnName="Date_Time_Order" />
+          <ScalarProperty Name="Number_Order" ColumnName="Number_Order" />
+          <ScalarProperty Name="Is_Deleted" ColumnName="Is_Deleted" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product">
+      <EntityTypeMapping TypeName="TabacoModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="ID_Product" ColumnName="ID_Product" />
+          <ScalarProperty Name="Name_Product" ColumnName="Name_Product" />
+          <ScalarProperty Name="Cost_Product" ColumnName="Cost_Product" />
+          <ScalarProperty Name="Strength" ColumnName="Strength" />
+          <ScalarProperty Name="Is_Deleted" ColumnName="Is_Deleted" />
+          <ScalarProperty Name="Type_ID" ColumnName="Type_ID" />
+          <ScalarProperty Name="Brand_ID" ColumnName="Brand_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product_History">
+      <EntityTypeMapping TypeName="TabacoModel.Product_History">
+        <MappingFragment StoreEntitySet="Product_History">
+          <ScalarProperty Name="ID_Product_History" ColumnName="ID_Product_History" />
+          <ScalarProperty Name="Product_Info" ColumnName="Product_Info" />
+          <ScalarProperty Name="Create_Record" ColumnName="Create_Record" />
+          <ScalarProperty Name="Change_Record" ColumnName="Change_Record" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products_Suppliers">
+      <EntityTypeMapping TypeName="TabacoModel.Products_Suppliers">
+        <MappingFragment StoreEntitySet="Products_Suppliers">
+          <ScalarProperty Name="ID_Products_Suppliers" ColumnName="ID_Products_Suppliers" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Quality_P_S" ColumnName="Quality_P_S" />
+          <ScalarProperty Name="Is_Deleted" ColumnName="Is_Deleted" />
+          <ScalarProperty Name="Type_ID" ColumnName="Type_ID" />
+          <ScalarProperty Name="Brand_ID" ColumnName="Brand_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Purchased_Products">
+      <EntityTypeMapping TypeName="TabacoModel.Purchased_Products">
+        <MappingFragment StoreEntitySet="Purchased_Products">
+          <ScalarProperty Name="ID_Purchased_Products" ColumnName="ID_Purchased_Products" />
+          <ScalarProperty Name="Quality" ColumnName="Quality" />
+          <ScalarProperty Name="Is_Deleted" ColumnName="Is_Deleted" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Role">
+      <EntityTypeMapping TypeName="TabacoModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="ID_Role" ColumnName="ID_Role" />
+          <ScalarProperty Name="Name_Role" ColumnName="Name_Role" />
+          <ScalarProperty Name="Is_Deleted" ColumnName="Is_Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shop">
+      <EntityTypeMapping TypeName="TabacoModel.Shop">
+        <MappingFragment StoreEntitySet="Shop">
+          <ScalarProperty Name="ID_Shop" ColumnName="ID_Shop" />
+          <ScalarProperty Name="Name_Shop" ColumnName="Name_Shop" />
+          <ScalarProperty Name="Adress_Shop" ColumnName="Adress_Shop" />
+          <ScalarProperty Name="Is_Deleted" ColumnName="Is_Deleted" />
+          <ScalarProperty Name="Warehouse_ID" ColumnName="Warehouse_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Supplier">
+      <EntityTypeMapping TypeName="TabacoModel.Supplier">
+        <MappingFragment StoreEntitySet="Supplier">
+          <ScalarProperty Name="ID_Supplier" ColumnName="ID_Supplier" />
+          <ScalarProperty Name="Name_Supplier" ColumnName="Name_Supplier" />
+          <ScalarProperty Name="Adress_Supplier" ColumnName="Adress_Supplier" />
+          <ScalarProperty Name="Is_Deleted" ColumnName="Is_Deleted" />
+          <ScalarProperty Name="Products_Suppliers_ID" ColumnName="Products_Suppliers_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="TabacoModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tokens">
+      <EntityTypeMapping TypeName="TabacoModel.Tokens">
+        <MappingFragment StoreEntitySet="Tokens">
+          <ScalarProperty Name="token_id" ColumnName="token_id" />
+          <ScalarProperty Name="token" ColumnName="token" />
+          <ScalarProperty Name="token_datetime" ColumnName="token_datetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Type">
+      <EntityTypeMapping TypeName="TabacoModel.Type">
+        <MappingFragment StoreEntitySet="Type">
+          <ScalarProperty Name="ID_Type" ColumnName="ID_Type" />
+          <ScalarProperty Name="Name_Type" ColumnName="Name_Type" />
+          <ScalarProperty Name="Is_Deleted" ColumnName="Is_Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="TabacoModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Middle_Name" ColumnName="Middle_Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="Phone_User" ColumnName="Phone_User" />
+          <ScalarProperty Name="Email_User" ColumnName="Email_User" />
+          <ScalarProperty Name="Password_User" ColumnName="Password_User" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Salt" ColumnName="Salt" />
+          <ScalarProperty Name="Is_Deleted" ColumnName="Is_Deleted" />
+          <ScalarProperty Name="Role_ID" ColumnName="Role_ID" />
+          <ScalarProperty Name="Bonus_Card_ID" ColumnName="Bonus_Card_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_History">
+      <EntityTypeMapping TypeName="TabacoModel.User_History">
+        <MappingFragment StoreEntitySet="User_History">
+          <ScalarProperty Name="ID_User_History" ColumnName="ID_User_History" />
+          <ScalarProperty Name="User_Info" ColumnName="User_Info" />
+          <ScalarProperty Name="Create_Record" ColumnName="Create_Record" />
+          <ScalarProperty Name="Change_Record" ColumnName="Change_Record" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Warehouse">
+      <EntityTypeMapping TypeName="TabacoModel.Warehouse">
+        <MappingFragment StoreEntitySet="Warehouse">
+          <ScalarProperty Name="ID_Warehouse" ColumnName="ID_Warehouse" />
+          <ScalarProperty Name="Quality" ColumnName="Quality" />
+          <ScalarProperty Name="Adress_Warehouse" ColumnName="Adress_Warehouse" />
+          <ScalarProperty Name="Number_Warehouse" ColumnName="Number_Warehouse" />
+          <ScalarProperty Name="Is_Deleted" ColumnName="Is_Deleted" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

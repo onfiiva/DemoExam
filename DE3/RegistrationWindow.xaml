@@ -1,0 +1,46 @@
+﻿<Window x:Class="DE3.RegistrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DE3"
+        mc:Ignorable="d"
+        Title="RegistrationWindow" Height="450" Width="400"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Регистрация" Grid.Column="1" Grid.Row="2" FontSize="20" VerticalAlignment="Center" TextAlignment="Center"/>
+
+        <TextBlock Text="Логин" Grid.Column="1" Grid.Row="3" FontSize="16" VerticalAlignment="Bottom" TextAlignment="Center"/>
+        <TextBox x:Name="regLogin" Grid.Column="1" Grid.Row="4" FontSize="16" TextAlignment="Center"/>
+        
+        <TextBlock Text="Пароль" Grid.Column="1" Grid.Row="5" FontSize="16" VerticalAlignment="Bottom" TextAlignment="Center"/>
+        <PasswordBox x:Name="regPassword" Grid.Column="1" Grid.Row="6" FontSize="16" HorizontalContentAlignment="Center"/>
+        
+        <TextBlock Text="Подтвердите пароль" Grid.Column="1" Grid.Row="7" FontSize="14" VerticalAlignment="Bottom" TextAlignment="Center"/>
+        <PasswordBox x:Name="regPasswordConfirm" Grid.Column="1" Grid.Row="8" FontSize="16" HorizontalContentAlignment="Center"/>
+
+        <Button x:Name="regConfirm" Content="Зарегистрироваться" Grid.Column="1" Grid.Row="9" FontSize="14" Click="regConfirm_Click"/>
+        <Button x:Name="toAuthWindow" Content="Авторизоваться" Grid.Column="1" Grid.Row="10" FontSize="14" Click="toAuthWindow_Click"/>
+    </Grid>
+</Window>
